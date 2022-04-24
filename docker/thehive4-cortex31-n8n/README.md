@@ -11,6 +11,8 @@ This template is used to showcase the integration of TheHive and Cortex with [n8
 
 Use `http://thehive:9000` and `http://cortex:9001` in n8n UI when defining credentials nodes.
 
+## put proper value in .env file
+
 Enjoy
 
 
