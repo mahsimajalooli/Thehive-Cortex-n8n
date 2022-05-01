@@ -29,13 +29,13 @@ services:
     container_name: cortex
     restart: unless-stopped
     command:
-      --job-directory ${JOB_DIRECTORY}
+      --job-directory /opt/cortex/jobs
     environment:
-      - 'JOB_DIRECTORY=${JOB_DIRECTORY}'
+      - 'JOB_DIRECTORY=/opt/cortex/jobs'
     volumes:
-      - './vol/cortex/application.conf:/etc/cortex/application.conf'
-      - '${JOB_DIRECTORY}:${JOB_DIRECTORY}'
       - '/var/run/docker.sock:/var/run/docker.sock'
+      - './vol/cortex/application.conf:/etc/cortex/application.conf'
+      - './vol/cortex/jobs:/opt/cortex/jobs'
     depends_on:
       - elasticsearch
     ports:
