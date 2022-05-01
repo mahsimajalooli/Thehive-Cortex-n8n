@@ -45,9 +45,11 @@ services:
     container_name: PostgresDB
     restart: unless-stopped
     environment:
-      - 'POSTGRES_USER=${POSTGRES_USER}'
-      - 'POSTGRES_PASSWORD=${POSTGRES_PASSWORD}'
-      - 'POSTGRES_DB=${POSTGRES_DB}'
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_NON_ROOT_USER
+      - POSTGRES_NON_ROOT_PASSWORD
     volumes:
       - './vol/postgres/data:/var/lib/postgresql/data'
     networks:
